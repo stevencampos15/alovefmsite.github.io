@@ -1,0 +1,178 @@
+.characters{
+    background: var(--characteres);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18.1px);
+    -webkit-backdrop-filter: blur(18.1px);
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 2rem;
+    line-height: normal;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.icons{
+    margin: auto;
+    display: flex;
+    flex-basis: 25%;
+    min-width: 250px;
+    justify-content: space-evenly;
+}
+
+.icon img{
+    width: 250px;
+    z-index: -1;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    display: block;
+    flex-wrap: nowrap;
+    flex-basis: 25%;
+    word-break: break-word;
+    margin: auto;
+    align-items: center;
+    
+}
+
+.name{
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    margin: auto;
+    display: block;
+    width: 230px;
+    z-index: 1;
+}
+
+
+
+.description{
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+#rapunzel{
+    width: 80%;
+    margin: auto;
+    background-color: var(--rapunzel);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--light);
+    background-image: url("/media/images/description/rapunzel-desc.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 13rem;
+}
+
+.rapunzel{
+    background-color: var(--rapunzel);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--light);
+    margin: -3rem auto 0.5rem ;
+}
+
+#flynn{
+    width: 80%;
+    margin: auto;
+    background-color: var(--flynn);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--dark-blue);
+    background-image: url("/media/images/description/flynn-desc.jpg");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 13rem;
+}
+
+.flynn{
+    background-color: var(--flynn);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--dark-blue);
+    margin-top: -3rem;
+}
+
+#motherGothel{
+    width: 80%;
+    margin: auto;
+    background-color: var(--gothel);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--brown);
+    background-image: url("/media/images/description/gothel-desc.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 13rem;
+}
+
+.motherGothel{
+    background-color: var(--gothel);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--brown);
+    margin: -3rem auto 0.5rem ;
+
+}
+
+#pascal{
+    width: 80%;
+    margin: auto;
+    background-color: var(--pascal);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--dark-green);
+    background-image: url("/media/images/description/pascal-desc.png");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 13rem;
+}
+
+
+.pascal{
+    background-color: var(--pascal);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--dark-green);
+    margin: -3rem auto 0.5rem ;
+}
+
+#maximus{
+    width: 80%;
+    margin: auto;
+    background-color: var(--maximus);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--brown);
+    background-image: url("/media/images/description/maximus-desc.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 13rem;
+}
+
+.maximus{
+    background-color: var(--maximus);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid var(--brown);
+    padding: 0rem 2.5rem;
+    margin: -3rem auto 0.5rem ;
+}

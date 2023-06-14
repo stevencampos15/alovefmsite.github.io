@@ -1,0 +1,52 @@
+@import url("/components/style/reset.css");
+
+nav.navbar{
+    z-index: 1000;
+    /* position: fixed; */
+    background: rgba(72, 53, 90, 0.39);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+
+  }
+
+.brand-logo{
+    width: 50px;
+    margin-right: 0;
+    align-items: flex-start;
+    /* display: flex; */
+}
+
+
+
+.navbar-toggler{
+  width: fit-content;
+}
+
+.navlink .active {
+    font-weight: bolder;
+    font-weight: 700;
+    line-height: 45px;
+    border-bottom: 3px solid rgba(33, 33, 33, 1);
+}
+.navbar a {
+  margin-left : 2.5em;
+  margin-right : 1.5em;
+}
+
+.name-logo{
+  width: 100px;
+}
+
+  @media (min-width: 992px)
+  {
+    .navbar a {
+        margin-left : 2.5em;
+        margin-right : 1.5em;
+    }
+
+    .navbar a:last-child{
+        margin-right: 0;
+    }
+
+}

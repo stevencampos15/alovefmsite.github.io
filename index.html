@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carla Almeida">
+    <link rel="shortcut icon" href="/media/images/icons/favicon-lantern.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+    <link rel="stylesheet" href="/components/style/style.css">
+    
+    <title>Tangled</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid pt-1">
+        <a class="navbar-brand col-2" href="#">
+          <img src="/media/images/icons/favicon-lantern.jpg" class="brand-logo" alt="lantern-logo">
+          <img src="/media/images/tangled-logo.png" alt="logo" class="name-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon position-relative justify-content-sm-end"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#summary">Plot</a>
+            <a class="nav-link" href="#characters">Characters</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#sing">Sing Along</a>
+            <a class="nav-link" href="#rent">Rent</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <canvas id="canvas"></canvas>
+    <container class="text" id="about">
+      <img class="logo" src="/media/images/tangled-logo.png" alt="tangled-logo">
+      <div class="intro d-flex">
+          <img class="cover" src="/media/images/tangled-cover.png" alt="tangled-cover">
+          <p><b>Tangled</b> is a 2010 American 3D computer-animated film produced by Walt Disney Animation Studios. Loosely based on the German fairy tale Rapunzel in the collection of folk tales published by the Brothers Grimm, it is the 50th Disney animated feature film. <br> Directed by Nathan Greno and Byron Howard, produced by Roy Conli, with a screenplay written by Dan Fogelman, staring the voices of Mandy Moore, Zachary Levi and Donna Murphy.</p>
+      </div>
+    </container>
+
+    <section class="plot" id="summary">
+      <div id="homeCarousel" class="carousel slide  d-none d-md-block" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        
+        <div class="carousel-inner  d-none d-md-block" >
+          <div class="carousel-item active">
+            <video autoplay loop>
+              <source src="/media/video/video-1.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <p>After receiving the healing powers of a magical flower, <br> baby Princess Rapunzel is kidnapped from the palace in the middle of the night by Mother Gothel</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <video autoplay loop class="clip-2">
+              <source src="/media/video/video-2.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <p>As the years pass, Rapunzel becomes fascinated by an annual event that seems to happen only on her birthday. <br> That night, every year, she witnesses thousands of floating lights in the sky, brighter than the stars and beautiful in all their colors. </p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <video autoplay loop class="clip-3">
+              <source src="/media/video/video-3.mp4" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <p>When the kingdom's most-wanted bandit, Flynn Rider, hides in a convenient tower, he immediately becomes a captive of Rapunzel. Together they begin a whirlwind adventure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="characters" id="characters">
+      <h1 class="title pb-5">
+        <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+        Main Characters
+        <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+      </h1>
+          
+      <div class="row icons">
+        <div class="col icon">
+          <img src="/media/images/icons/rapunzel-icon.png" alt="Rapunzel">
+          <a class="name rapunzel h3" style="color: var(--light);" data-bs-toggle="collapse" href="#rapunzel" role="button" aria-expanded="false" aria-controls="rapunzel">Rapunzel</a>
+        </div>
+
+        <div class="col icon">
+          <img src="/media/images/icons/flynn-icon.png" alt="Flynn Rider">
+          <a class="name flynn h3" style="color: var(--maximus);" data-bs-toggle="collapse" href="#flynn" role="button" aria-expanded="false" aria-controls="flynn">Flynn Rider</a>
+        </div>
+          
+        <div class="col icon">
+          <img src="/media/images/icons/gothel-icon.png" alt="Mother Gothel">
+          <a class="name motherGothel h3" style="color: var(--darkest);"data-bs-toggle="collapse" href="#motherGothel" role="button" aria-expanded="false" aria-controls="motherGothel">Mother Gothel</a>
+        </div>
+        
+        <div class="col icon">
+          <img src="/media/images/icons/pascal-icon.png" alt="Pascal">
+          <a class="name pascal h3" style="color: var(--dark-green);"data-bs-toggle="collapse" href="#pascal" role="button" aria-expanded="false" aria-controls="pascal">Pascal</a>
+        </div>
+
+        <div class="col icon">
+          <img src="/media/images/icons/max-icon.png" alt="Maximus">
+          <a class="name maximus h3" style="color: var(--dark-blue);" data-bs-toggle="collapse" href="#maximus" role="button" aria-expanded="false" aria-controls="maximus">Maximus</a>
+        </div>
+      </div>
+
+      <div class="row description collapse" id="rapunzel">
+        <p>Rapunzel spends most of her life in a tower with her chameleon friend, Pascal, imagining the world outside. Each year on her birthday, she sees from her tower window, floating lights comming from the castle, she then wonders what they are and what they mean and why they only come on her birthday.</p>
+      </div>
+
+      <div class="row description collapse" id="flynn">
+        <p>At first, Flynn comes off as cocky, arrogant, and a little self-centered. As an experienced thief, he is skilled in escaping the authorities, hiding out, and stealing right from under people's noses. However, as he begins to fall in love with Rapunzel, he transforms into a more compassionate, chivalrous, and trustworthy person, and changes his priorities.</p>
+      </div>
+
+      <div class="row description collapse" id="motherGothel">
+        <p>She locked Rapunzel into her tower when she was a baby. The villain knows that the flower's magical powers are growing inside Rapunzel's golden hair, and to stay young, she must lock the princess in her hidden tower. As Rapunzel grows up, she has then believed that Mother Gothel has always been her mother and her motherly figure.</p>
+      </div>
+
+      <div class="row description collapse" id="pascal">
+        <p style="color: var(--dark-green);">Pascal is a true and loyal friend to Rapunzel. Even though he can't communicate verbally, he is one of the driving forces in pushing Rapunzel to leave the tower. Pascal is constantly cheering Rapunzel up, rooting her on, and refusing to allow her to take steps backwards.</p>
+      </div>
+
+      <div class="row description collapse" id="maximus">
+        <p style="color: var(--dark-blue);">Maximus is a dedicated guard horse who will stop at nothing to take down the criminal he is after. Maximus is brave, daring, bold and not at all cowardly even being more feared than his captain. Although Maximus can be extremely tough, he has a large heart and even becomes best friends with his former arch enemy Flynn Ryder as they join together to reunite Rapunzel with her family.</p>
+      </div>
+    </section>
+
+
+    <section class="gallery" id="gallery">
+      <h2 class="title mt-5">
+        <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+          Gallery
+        <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+      </h2>
+  
+      <div class="carousel-2">
+        <div class="carousel-album">
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-001.jpg" alt="gallery-001">
+          </div>
+  
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-002.jpg" alt="gallery-002">
+          </div>
+  
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-003.jpg" alt="gallery-003">
+          </div>
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-004.jpg" alt="gallery-004">
+          </div>
+  
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-005.jpg" alt="gallery-005">
+          </div>
+  
+          <div class="carousel-photo">
+            <img src="/media/images/gallery/gallery-006.jpg" alt="gallery-006">
+          </div>
+
+        </div>
+      </div>
+        
+    </section>
+    
+    <section class="sing" id="sing">
+        <h2 class="title">
+          <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+          Sing Along
+          <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+        </h2>
+
+        <div class="row videos">
+          <div class="col mb-5">
+            <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/when-will-my-life-begin.mp4">
+            <img src="/media/images/cover/when-will-my-life-begin.png" alt="When Will My Life Begin">
+            </a>
+            <p>When Will My Life Begin</p>
+          </div>
+
+          <div class="col mb-5">
+            <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/mother-knows-best.mp4">
+            <img src="/media/images/cover/mother-knows-best.jpg" alt="Mother Knows Best">
+            </a>
+            <p>Mother Knows Best</p>
+          </div>
+
+          <div class="col mb-5">
+            <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/I've-got-a-dream.mp4">
+            <img src="/media/images/cover/Ive-Got-a-Dream.jpg" alt="I've Got a Dream">
+            </a>
+            <p>I've Got a Dream</p>
+          </div>
+
+          <div class="col mb-5">
+            <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/I-see-the-light.mp4">
+            <img src="/media/images/cover/i-see-the-light.gif" alt="I See the Light">
+            </a>
+            <p>I See the Light</p>
+          </div>
+
+        </div>
+        
+    </section>
+
+    <section class="rent" id="rent">
+      <canvas id="lantern"></canvas>
+      <div class="d-flex">
+        <img class="boat" src="/media/images/tangled-boat1.png" alt="rapunzel lanterns">  
+        <div class="col link">
+          <img src="/media/images/tangled-logo.png" alt="tangled-logo">
+          <h3 class="pb-3">Buy or Rent: </h3>
+          
+          <div class="d-flex">
+            <a class="btn-disney" href="https://www.disneyplus.com/movies/tangled/3V3ALy4SHStq"></a>
+            <a class="btn-amazon" href="https://www.amazon.com/Tangled-Mandy-Moore/dp/B004QKNXIQ">
+            </a>
+            <a class="btn-google" href="https://play.google.com/store/movies/details/Tangled?id=hUDS0JchIGA.P&hl"></a>
+          </div>
+          
+        </div>
+      </div>
+      
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="/components/scripts/script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+<footer class="d-flex" align="right">
+  <p>Carla Almeida</p>
+  <p>Front-end Developer</p>
+  <div class="d-flex">
+    <a href="https://github.com/carlaleticia" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/carlaleticia/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://mysite-deploy.vercel.app/" target="_blank"><i class="fa-solid fa-globe"></i></a>
+  </div>
+</footer>
+</html>

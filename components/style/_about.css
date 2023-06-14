@@ -1,0 +1,44 @@
+@import url('/components/style/reset.css');
+
+
+container{
+    width: 70%;
+    display: block;
+    margin: 7rem auto 0;
+    align-items: center;
+    text-align: center;
+    text-size-adjust: 100%;
+    height: fit-content;
+}
+
+
+.text{
+    background: rgba(7, 12, 27, 0.24);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border: 1px solid rgba(13, 19, 37, 1);
+    margin-bottom: 2rem;
+}
+
+.logo{
+    align-items: center;
+    margin: 2rem auto 0;
+    text-align: center;
+    display: block;
+    z-index: 1;
+    padding: 1rem;
+    width: 50%;
+    /* margin-right: 6rem; */
+}
+
+.cover{
+    width: 250px;
+    margin: auto auto 2rem;
+    display: block;
+}
+
+.intro p{
+    padding: 5rem 2rem;
+}

@@ -1,0 +1,41 @@
+@import url('/components/style/reset.css');
+@import url('/components/style/style.css');
+
+
+.sing{
+    background: rgba(72, 53, 90, 0.39);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.123);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    margin: auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: .5rem;
+    padding-bottom: 5rem;
+}
+
+.sing h2, .gallery h2{
+    text-transform: uppercase;
+    margin: 7rem auto;
+    align-items: center;
+    display: block;
+}
+
+.videos a img{
+    border:solid 3px var(--light);
+    border-radius: 1rem;
+    width: 350px;
+    height: 200px;
+    flex-wrap: nowrap;
+    flex-basis: 20%;
+    margin: auto;
+    align-items: center;
+}
+
+.videos a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}

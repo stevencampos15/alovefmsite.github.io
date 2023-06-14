@@ -1,0 +1,66 @@
+.boat{
+    width: 50%;
+    box-shadow: var(--shadow);
+    margin-top: 10rem;
+}
+
+.link{
+    background: rgba(72, 53, 90, 0.39);
+    box-shadow: var(--shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    width: 50%;
+    margin: auto 8rem auto 0;
+    align-items: center;
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+.link img{
+    width: 250px;
+    padding: 0rem 0;
+    display: block;
+    padding-bottom: 2rem;
+}
+
+.link a{    
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+    padding: 2rem;
+    color: var(--light);
+    width: 50px;
+    height: 50px;
+}
+
+.btn-google{
+    background-image: url('/media/images/icons/google-play-icon.png');
+    background-color: var(--light);
+    border: 1px solid var(--light);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btn-amazon{
+    background-image: url('/media/images/icons//amazon-icon.png');
+    background-color: var(--light);
+    border: 1px solid var(--light);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.btn-disney{
+    background-image: url('/media/images/icons/disney-plus-icon.png');
+    background-color: var(--light);
+    border: 1px solid var(--light);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}

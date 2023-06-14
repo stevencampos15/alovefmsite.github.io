@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap");
+
+:root{
+    --yellow: #F4F49B;
+    --light: #F5E7C2;
+    --lilas: #E0C2FF;
+    --purple: #C488CC;
+    --dress: #C86AA9;
+    --plum: #A85088;
+    --pink: #FEBAB1;
+    --caramel: #EAA870;
+    --brown: #682E18;
+    --dark-brown: #5D2425;
+    --darkest: #32202A;
+    --green: #366138;
+    --dark-green: #094023;
+    --rapunzel: #B86DE1;
+    --flynn: #2F5597;
+    --gothel: #AF6346;
+    --pascal: #A9D18E;
+    --maximus: #D6DCE5;
+    --dark-blue: #152930;
+
+    --font: 'Mali', cursive;
+    --characteres: rgba(146, 81, 156, 0.51);
+    --shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --blur: blur(7px);
+}
+
+.flower-icon{
+    width: 50px;
+}
