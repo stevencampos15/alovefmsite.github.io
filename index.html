@@ -52,10 +52,10 @@
           </fieldset>
         </form>
       </div>
-      <img class="cover" id="mostrar" src="/media/images/tangled-cover.png" alt="tangled-cover" style="flex:5; visibility: hidden; ">
+      <img class="cover" id="mostrar" src="/media/images/tangled-cover.png" alt="tangled-cover" style="flex:5; display: none; ">
     </div>
   </container>
-  <section class="sing mostrar" id="sing" style="visibility: hidden;">
+  <section class="sing" id="sing" style="display: none;">
     <h2 class="title">
       <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
       Sing Along
@@ -76,6 +76,7 @@
     window.addEventListener("DOMContentLoaded", (event) => {
       console.log("DOM fully loaded and parsed");
       audio.play();
+      audio.loop=true;
     });
     const el = document.getElementById('selectbasic');
 
@@ -85,10 +86,10 @@
 		el.addEventListener('change', function handleChange(event) {
 			if (event.target.value === 'Si') {
         audio.pause();
-				imagen.style.visibility = 'show';
-        sing.style.visibility = 'show';
+				imagen.style.display = 'block';
+        sing.style.display = 'block';
 			} else {
-				box.style.display = 'hidden';
+				box.style.display = 'none';
 			}
 		});
   </script>
