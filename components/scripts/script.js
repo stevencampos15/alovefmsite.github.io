@@ -168,16 +168,4 @@ const audio = new Audio("/media/song/Congratulations.mp3");
         box.style.display = 'none';
       }
     });
-    document.body.addEventListener('touchstart', function () {
-      if (audiosWeWantToUnlock) {
-        for (let audio of audiosWeWantToUnlock) {
-          audio.play()
-          audio.pause()
-          audio.currentTime = 0
-        } audiosWeWantToUnlock = null
-      }
-    }, false)
-    //where earlier you did:
-    var audiosWeWantToUnlock = []
-    audiosWeWantToUnlock.push(audio)
-    audiosWeWantToUnlock.push(audiolove)
+
