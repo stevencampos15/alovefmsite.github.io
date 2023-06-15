@@ -84,6 +84,7 @@
 
 		el.addEventListener('change', function handleChange(event) {
 			if (event.target.value === 'Si') {
+        audio.stop();
 				imagen.style.visibility = 'show';
         sing.style.visibility = 'show';
 			} else {
