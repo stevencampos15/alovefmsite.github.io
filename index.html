@@ -105,7 +105,7 @@
       if (event.target.value === 'Si') {
         audio.pause();
         audiolove.play();
-        var audiosWeWantToUnlock = [];
+        
         if (audiosWeWantToUnlock) {
           for (let audio of audiosWeWantToUnlock) {
             audio.play()
@@ -113,6 +113,7 @@
             audio.currentTime = 0
           } audiosWeWantToUnlock = null
         }
+        var audiosWeWantToUnlock = [];
         audiosWeWantToUnlock.push(audiolove);
         imagen.style.display = 'block';
         sing.style.display = 'block';
