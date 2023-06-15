@@ -82,7 +82,7 @@
     const audio = new Audio("/media/song/Congratulations.mp3");
     const audiolove = new Audio("/media/song/love.mp3");
     let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let source;
+    let source = audioCtx.createBufferSource();
     window.addEventListener('DOMContentLoaded', (event) => {
 				// noinspection JSUnresolvedVariable
 				
@@ -91,7 +91,7 @@
 				xhr.responseType = 'arraybuffer';
 				xhr.addEventListener('DOMContentLoaded', (event) => {
 					let playsound = (audioBuffer) => {
-						source = audioCtx.createBufferSource();
+						
 						source.buffer = audioBuffer;
 						source.connect(audioCtx.destination);
 						source.loop = true;
