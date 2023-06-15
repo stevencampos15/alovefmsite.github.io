@@ -82,16 +82,16 @@
     const audio = new Audio("/media/song/Congratulations.mp3");
     const audiolove = new Audio("/media/song/love.mp3");
     let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let source = audioCtx.createBufferSource();
-    window.addEventListener('load', () => {
+    let source;
+    window.addEventListener('DOMContentLoaded', (event) => {
 				// noinspection JSUnresolvedVariable
 				
 				let xhr = new XMLHttpRequest();
 				xhr.open('GET', '/media/song/Congratulations.mp3');
 				xhr.responseType = 'arraybuffer';
-				xhr.addEventListener('load', () => {
+				xhr.addEventListener('DOMContentLoaded', (event) => {
 					let playsound = (audioBuffer) => {
-						
+						source = audioCtx.createBufferSource();
 						source.buffer = audioBuffer;
 						source.connect(audioCtx.destination);
 						source.loop = true;
@@ -103,7 +103,8 @@
 				xhr.send();
 			});
     window.addEventListener("DOMContentLoaded", (event) => {
-
+      //audio.play();
+      //audio.loop = true;
       source.start();
     });
     const el = document.getElementById('selectbasic');
