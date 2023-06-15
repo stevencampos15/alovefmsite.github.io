@@ -58,7 +58,7 @@
         <p> Te quiero Mucho 😘💕</p>
         <img class="cover" src="/media/images/jimandpam.avif" alt="JimAndPam">
       </div>
-      
+
     </div>
   </container>
   <section class="sing" id="sing" style="display: none;">
@@ -83,61 +83,36 @@
     const audiolove = new Audio("/media/song/love.mp3");
     window.addEventListener("DOMContentLoaded", (event) => {
       audio.play();
-      audio.loop=true;
+      audio.loop = true;
     });
     const el = document.getElementById('selectbasic');
 
-		const imagen = document.getElementById('mostrar');
+    const imagen = document.getElementById('mostrar');
     const sing = document.getElementById('sing');
 
-		el.addEventListener('change', function handleChange(event) {
-			if (event.target.value === 'Si') {
+    el.addEventListener('change', function handleChange(event) {
+      if (event.target.value === 'Si') {
         audio.pause();
         audiolove.play();
-				imagen.style.display = 'block';
+        imagen.style.display = 'block';
         sing.style.display = 'block';
-			} else {
-				box.style.display = 'none';
-			}
-		});
-// Pass the DOM element used to unlock to the method and remove it on unlock.
-function autoplayUnlock(element) {
-    var context = new (window.AudioContext || window.webkitAudioContext)();
-
-    return new Promise(function (resolve, reject) {
-        if (context.state === 'suspended') {
-            var unlock = function unlock() {
-                context.resume()
-                    .then(function () {
-                        window.removeEventListener('keydown', unlock);
-                        element.removeEventListener('click', unlock);
-                        element.removeEventListener('touchstart', unlock);
-                        element.removeEventListener('touchend', unlock);
-
-                        resolve();
-                    }).catch(function (error) {
-                        reject(error);
-                    });
-            };
-
-            window.addEventListener('keydown', unlock, false);
-            element.addEventListener('click', unlock, false);
-            element.addEventListener('touchstart', unlock, false);
-            element.addEventListener('touchend', unlock, false);
-        } else {
-            resolve();
-        }
+      } else {
+        box.style.display = 'none';
+      }
     });
-}
-
-autoplayUnlock(autoplayUnlockElement)
-    .then(function() {
-        document.body.removeChild(autoplayUnlockElement);
-        audio.play();     
-    })
-    .catch(function(error) {
-        console.error(error);
-    });
+    document.body.addEventListener('touchstart', function () {
+      if (audiosWeWantToUnlock) {
+        for (let audio of audiosWeWantToUnlock) {
+          audio.play()
+          audio.pause()
+          audio.currentTime = 0
+        } audiosWeWantToUnlock = null
+      }
+    }, false)
+    //where earlier you did:
+var audiosWeWantToUnlock = []
+audiosWeWantToUnlock.push(audio)
+audiosWeWantToUnlock.push(audiolove)
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
