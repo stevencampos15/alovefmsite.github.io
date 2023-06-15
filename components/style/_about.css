@@ -22,7 +22,7 @@ container{
     margin-bottom: 2rem;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 400px;
+    height: auto;
     width: 80%;
 }
 
@@ -58,5 +58,5 @@ container{
 }
 
 .d-flex{
-    display: inline-flex !important;
+    display: inline !important;
 }
