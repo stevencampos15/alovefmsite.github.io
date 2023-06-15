@@ -106,6 +106,15 @@
     el.addEventListener('change', function handleChange(event) {
       if (event.target.value === 'Si') {
         audio.pause();
+        document.body.addEventListener('touchstart', function () {
+          if (audiosWeWantToUnlock) {
+            for (let audio of audiosWeWantToUnlock) {
+              audio.play()
+
+              audio.currentTime = 0
+            } audiosWeWantToUnlock = null
+          }
+        }, false)
         audiosWeWantToUnlock.push(audiolove);
         audiolove.play();
         imagen.style.display = 'block';
@@ -114,7 +123,7 @@
         box.style.display = 'none';
       }
     });
-    
+
 
 
   </script>
