@@ -100,7 +100,44 @@
 				box.style.display = 'none';
 			}
 		});
-    
+// Pass the DOM element used to unlock to the method and remove it on unlock.
+function autoplayUnlock(element) {
+    var context = new (window.AudioContext || window.webkitAudioContext)();
+
+    return new Promise(function (resolve, reject) {
+        if (context.state === 'suspended') {
+            var unlock = function unlock() {
+                context.resume()
+                    .then(function () {
+                        window.removeEventListener('keydown', unlock);
+                        element.removeEventListener('click', unlock);
+                        element.removeEventListener('touchstart', unlock);
+                        element.removeEventListener('touchend', unlock);
+
+                        resolve();
+                    }).catch(function (error) {
+                        reject(error);
+                    });
+            };
+
+            window.addEventListener('keydown', unlock, false);
+            element.addEventListener('click', unlock, false);
+            element.addEventListener('touchstart', unlock, false);
+            element.addEventListener('touchend', unlock, false);
+        } else {
+            resolve();
+        }
+    });
+}
+
+autoplayUnlock(autoplayUnlockElement)
+    .then(function() {
+        document.body.removeChild(autoplayUnlockElement);
+        audio.play();     
+    })
+    .catch(function(error) {
+        console.error(error);
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
