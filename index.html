@@ -52,7 +52,11 @@
           </fieldset>
         </form>
       </div>
-      <img class="cover" id="mostrar" src="/media/images/tangled-cover.png" alt="tangled-cover" style="flex:5; display: none; ">
+      <div id="mostrar" style="flex:5; display: none; ">
+        <p> Te quiero Mucho 😘💕</p>
+        <img class="cover" src="/media/images/tangled-cover.png" alt="tangled-cover">
+      </div>
+      
     </div>
   </container>
   <section class="sing" id="sing" style="display: none;">
@@ -73,8 +77,8 @@
   </section>
   <script type="text/javascript">
     const audio = new Audio("/media/song/Congratulations.mp3");
+    const audiolove = new Audio("/media/song/love.mp3");
     window.addEventListener("DOMContentLoaded", (event) => {
-      console.log("DOM fully loaded and parsed");
       audio.play();
       audio.loop=true;
     });
@@ -86,6 +90,7 @@
 		el.addEventListener('change', function handleChange(event) {
 			if (event.target.value === 'Si') {
         audio.pause();
+        audiolove.play();
 				imagen.style.display = 'block';
         sing.style.display = 'block';
 			} else {
