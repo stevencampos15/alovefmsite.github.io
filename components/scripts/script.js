@@ -2,7 +2,7 @@ let tangledLanterns = {
 	lanternHeight: 80,
 	lanternWidth: 86,
 	lanterns: [],
-	lanternImage: 'https://drive.google.com/uc?export=view&id=1oyJBnKqLetaocwcshEJKANIElvaSh6l-',
+	lanternImage: '/media/images/lantern-3.png',
 	maxlanterns: 50,
 	minRatio: 0.01,
 
@@ -74,7 +74,7 @@ let tangledLanterns2 = {
 	lanternHeight: 80,
 	lanternWidth: 86,
 	lanterns: [],
-	lanternImage: 'https://drive.google.com/uc?export=view&id=1oyJBnKqLetaocwcshEJKANIElvaSh6l-',
+	lanternImage: '/media/images/lantern-3.png',
 	maxlanterns: 50,
 	minRatio: 0.01,
 
