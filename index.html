@@ -20,12 +20,23 @@
 
 <body>
   <canvas id="canvas"></canvas>
-  <audio src="\media\song\Congratulations.mp3" id="my_audio"></audio>
   <script type="text/javascript">
+    const audio = new Audio("\media\song\Congratulations.mp3");
     window.addEventListener("DOMContentLoaded", (event) => {
       console.log("DOM fully loaded and parsed");
-      document.getElementById("my_audio").play();
+      audio.play();
     });
+    const el = document.getElementById('selectbasic');
+
+		const box = document.getElementsByClassName('mostrar');
+
+		el.addEventListener('change', function handleChange(event) {
+			if (event.target.value === 'Si') {
+				box.style.display = 'block';
+			} else {
+				box.style.display = 'none';
+			}
+		});
   </script>
   <container class="text" id="about">
     <div class="intro d-flex">
