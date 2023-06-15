@@ -142,7 +142,7 @@ let tangledLanterns2 = {
 	}
 };
 
-window.onload = function() {
+document.onload = function() {
 	tangledLanterns.initialize();
 	tangledLanterns2.initialize();
 };
