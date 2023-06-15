@@ -81,31 +81,9 @@
   <script type="text/javascript">
     const audio = new Audio("/media/song/Congratulations.mp3");
     const audiolove = new Audio("/media/song/love.mp3");
-    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let source = audioCtx.createBufferSource();
-    window.addEventListener('DOMContentLoaded', (event) => {
-				// noinspection JSUnresolvedVariable
-				
-				let xhr = new XMLHttpRequest();
-				xhr.open('GET', '/media/song/Congratulations.mp3');
-				xhr.responseType = 'arraybuffer';
-				xhr.addEventListener('DOMContentLoaded', (event) => {
-					let playsound = (audioBuffer) => {
-						
-						source.buffer = audioBuffer;
-						source.connect(audioCtx.destination);
-						source.loop = true;
-						
-					};
-
-					audioCtx.decodeAudioData(xhr.response).then(playsound);
-				});
-				xhr.send();
-			});
     window.addEventListener("DOMContentLoaded", (event) => {
-      //audio.play();
-      //audio.loop = true;
-      source.start();
+      audio.play();
+      audio.loop = true;
     });
     const el = document.getElementById('selectbasic');
 
@@ -115,7 +93,6 @@
     el.addEventListener('change', function handleChange(event) {
       if (event.target.value === 'Si') {
         audio.pause();
-        source.stop();
         audiolove.play();
         imagen.style.display = 'block';
         sing.style.display = 'block';
@@ -136,6 +113,8 @@
     var audiosWeWantToUnlock = []
     audiosWeWantToUnlock.push(audio)
     audiosWeWantToUnlock.push(audiolove)
+
+
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
