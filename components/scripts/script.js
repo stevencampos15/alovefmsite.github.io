@@ -146,3 +146,38 @@ window.onload = function () {
 	tangledLanterns.initialize();
 	tangledLanterns2.initialize();
 };
+
+const audio = new Audio("/media/song/Congratulations.mp3");
+    const audiolove = new Audio("/media/song/love.mp3");
+    window.addEventListener("DOMContentLoaded", (event) => {
+      audio.play();
+      audio.loop = true;
+    });
+    const el = document.getElementById('selectbasic');
+
+    const imagen = document.getElementById('mostrar');
+    const sing = document.getElementById('sing');
+
+    el.addEventListener('change', function handleChange(event) {
+      if (event.target.value === 'Si') {
+        audio.pause();
+        audiolove.play();
+        imagen.style.display = 'block';
+        sing.style.display = 'block';
+      } else {
+        box.style.display = 'none';
+      }
+    });
+    document.body.addEventListener('touchstart', function () {
+      if (audiosWeWantToUnlock) {
+        for (let audio of audiosWeWantToUnlock) {
+          audio.play()
+          audio.pause()
+          audio.currentTime = 0
+        } audiosWeWantToUnlock = null
+      }
+    }, false)
+    //where earlier you did:
+    var audiosWeWantToUnlock = []
+    audiosWeWantToUnlock.push(audio)
+    audiosWeWantToUnlock.push(audiolove)
