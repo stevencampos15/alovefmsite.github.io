@@ -58,7 +58,7 @@
         <p> Te quiero Mucho 😘💕</p>
         <img class="cover" src="/media/images/jimandpam.avif" alt="JimAndPam">
       </div>
-
+      
     </div>
   </container>
   <section class="sing" id="sing" style="display: none;">
@@ -73,11 +73,34 @@
       </a>
       <p>I See the Light</p>
     </div>
-    <img class="cover" src="/media/images/tangled-cover.png" alt="Tangled">
+    <img class="cover" src="/media/images/tangled-cover.png" alt="JimAndPam">
 
     </div>
 
   </section>
+  <script type="text/javascript">
+    const audio = new Audio("/media/song/Congratulations.mp3");
+    const audiolove = new Audio("/media/song/love.mp3");
+    window.addEventListener("DOMContentLoaded", (event) => {
+      audio.play();
+      audio.loop=true;
+    });
+    const el = document.getElementById('selectbasic');
+
+		const imagen = document.getElementById('mostrar');
+    const sing = document.getElementById('sing');
+
+		el.addEventListener('change', function handleChange(event) {
+			if (event.target.value === 'Si') {
+        audio.pause();
+        audiolove.play();
+				imagen.style.display = 'block';
+        sing.style.display = 'block';
+			} else {
+				box.style.display = 'none';
+			}
+		});
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
   <script src="/components/scripts/script.js"></script>
