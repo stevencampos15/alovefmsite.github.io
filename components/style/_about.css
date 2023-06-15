@@ -46,3 +46,17 @@ container{
 .intro p{
     padding: 5rem 2rem;
 }
+
+#divtext {
+    width: 100%;
+    flex: 2;
+}
+
+#divform{
+    width: 100%;
+    flex: 5;
+}
+
+.d-flex{
+    display: inline-flex !important;
+}
