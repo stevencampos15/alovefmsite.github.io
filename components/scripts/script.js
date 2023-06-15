@@ -6,21 +6,6 @@ let tangledLanterns = {
 	maxlanterns: 50,
 	minRatio: 0.01,
 
-	//method for show content
-	showContent() {
-		const el = document.getElementById('selectbasic');
-
-		const box = document.getElementsByClassName('mostrar');
-
-		el.addEventListener('change', function handleChange(event) {
-			if (event.target.value === 'Si') {
-				box.style.display = 'block';
-			} else {
-				box.style.display = 'none';
-			}
-		});
-	},
-
 	//method draw
 	createLatern() {
 		this.setCanvasSize();
