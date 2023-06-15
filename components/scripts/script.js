@@ -6,21 +6,6 @@ let tangledLanterns = {
 	maxlanterns: 50,
 	minRatio: 0.01,
 
-	//method for show content
-	showContent() {
-		const el = document.getElementById('select');
-
-		const box = document.getElementById('box');
-
-		el.addEventListener('change', function handleChange(event) {
-			if (event.target.value === 'show') {
-				box.style.display = 'block';
-			} else {
-				box.style.display = 'none';
-			}
-		});
-	},
-
 	//method draw
 	createLatern() {
 		this.setCanvasSize();
@@ -77,7 +62,7 @@ let tangledLanterns = {
 		}
 
 		setInterval(
-			function () {
+			function() {
 				this.createLatern();
 			}.bind(this),
 			50
@@ -149,7 +134,7 @@ let tangledLanterns2 = {
 		}
 
 		setInterval(
-			function () {
+			function() {
 				this.createLatern();
 			}.bind(this),
 			50
@@ -157,7 +142,7 @@ let tangledLanterns2 = {
 	}
 };
 
-window.onload = function () {
+window.onload = function() {
 	tangledLanterns.initialize();
 	tangledLanterns2.initialize();
 };
