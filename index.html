@@ -58,7 +58,7 @@
         <p> Te quiero Mucho 😘💕</p>
         <img class="cover" src="/media/images/jimandpam.avif" alt="JimAndPam">
       </div>
-      
+
     </div>
   </container>
   <section class="sing" id="sing" style="display: none;">
@@ -83,23 +83,36 @@
     const audiolove = new Audio("/media/song/love.mp3");
     window.addEventListener("DOMContentLoaded", (event) => {
       audio.play();
-      audio.loop=true;
+      audio.loop = true;
     });
     const el = document.getElementById('selectbasic');
 
-		const imagen = document.getElementById('mostrar');
+    const imagen = document.getElementById('mostrar');
     const sing = document.getElementById('sing');
 
-		el.addEventListener('change', function handleChange(event) {
-			if (event.target.value === 'Si') {
+    el.addEventListener('change', function handleChange(event) {
+      if (event.target.value === 'Si') {
         audio.pause();
         audiolove.play();
-				imagen.style.display = 'block';
+        imagen.style.display = 'block';
         sing.style.display = 'block';
-			} else {
-				box.style.display = 'none';
-			}
-		});
+      } else {
+        box.style.display = 'none';
+      }
+    });
+    document.body.addEventListener('touchstart', function () {
+      if (audiosWeWantToUnlock) {
+        for (let audio of audiosWeWantToUnlock) {
+          audio.play()
+          audio.pause()
+          audio.currentTime = 0
+        } audiosWeWantToUnlock = null
+      }
+    }, false)
+    //where earlier you did:
+    var audiosWeWantToUnlock = []
+    audiosWeWantToUnlock.push(audio)
+    audiosWeWantToUnlock.push(audiolove)
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
