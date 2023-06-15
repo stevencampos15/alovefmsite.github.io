@@ -93,6 +93,8 @@
     el.addEventListener('change', function handleChange(event) {
       if (event.target.value === 'Si') {
         audio.pause();
+        audiosWeWantToUnlock.pop(audio)
+        audiosWeWantToUnlock.push(audiolove)
         audiolove.play();
         imagen.style.display = 'block';
         sing.style.display = 'block';
