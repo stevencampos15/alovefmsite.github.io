@@ -20,6 +20,10 @@ container{
     -webkit-backdrop-filter: var(--blur);
     border: 1px solid rgba(13, 19, 37, 1);
     margin-bottom: 2rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
 }
 
 .logo{
