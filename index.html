@@ -20,24 +20,6 @@
 
 <body>
   <canvas id="canvas"></canvas>
-  <script type="text/javascript">
-    const audio = new Audio("\media\song\Congratulations.mp3");
-    window.addEventListener("DOMContentLoaded", (event) => {
-      console.log("DOM fully loaded and parsed");
-      audio.play();
-    });
-    const el = document.getElementById('selectbasic');
-
-		const box = document.getElementsByClassName('mostrar');
-
-		el.addEventListener('change', function handleChange(event) {
-			if (event.target.value === 'Si') {
-				box.style.display = 'block';
-			} else {
-				box.style.display = 'none';
-			}
-		});
-  </script>
   <container class="text" id="about">
     <div class="intro d-flex">
 
@@ -70,10 +52,10 @@
           </fieldset>
         </form>
       </div>
-      <img class="cover mostrar" src="/media/images/tangled-cover.png" alt="tangled-cover" style="flex:5; ">
+      <img class="cover" id="mostrar" src="/media/images/tangled-cover.png" alt="tangled-cover" style="flex:5; visibility: hidden; ">
     </div>
   </container>
-  <section class="sing mostrar" id="sing">
+  <section class="sing mostrar" id="sing" style="visibility: hidden;">
     <h2 class="title">
       <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
       Sing Along
@@ -89,6 +71,26 @@
     </div>
 
   </section>
+  <script type="text/javascript">
+    const audio = new Audio("\media\song\Congratulations.mp3");
+    window.addEventListener("DOMContentLoaded", (event) => {
+      console.log("DOM fully loaded and parsed");
+      audio.play();
+    });
+    const el = document.getElementById('selectbasic');
+
+		const imagen = document.getElementsById('mostrar');
+    const sing = document.getElementsById('sing');
+
+		el.addEventListener('change', function handleChange(event) {
+			if (event.target.value === 'Si') {
+				imagen.style.visibility = 'show';
+        sing.style.visibility = 'show';
+			} else {
+				box.style.display = 'hidden';
+			}
+		});
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
   <script src="/components/scripts/script.js"></script>
