@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Carla Almeida">
-    <link rel="shortcut icon" href="/media/images/icons/favicon-lantern.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
-    <link rel="stylesheet" href="/components/style/style.css">
-    
-    <title>Tangled</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Carla Almeida">
+  <link rel="shortcut icon" href="/media/images/icons/favicon-lantern.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+  <link rel="stylesheet" href="/components/style/style.css">
+
+  <title>Tangled</title>
 </head>
+
 <body>
-    <canvas id="canvas"></canvas>
-    <container class="text" id="about">
-      <div class="intro d-flex">
-          <img class="cover" src="/media/images/tangled-cover.png" alt="tangled-cover">
-          <p><b>Tangled</b> is a 2010 American 3D computer-animated film produced by Walt Disney Animation Studios. Loosely based on the German fairy tale Rapunzel in the collection of folk tales published by the Brothers Grimm, it is the 50th Disney animated feature film. <br> Directed by Nathan Greno and Byron Howard, produced by Roy Conli, with a screenplay written by Dan Fogelman, staring the voices of Mandy Moore, Zachary Levi and Donna Murphy.</p>
-          <form class="form-horizontal">
-            <fieldset>
-            
+  <canvas id="canvas"></canvas>
+  <container class="text" id="about">
+    <div class="intro d-flex">
+      <img class="cover" src="/media/images/tangled-cover.png" alt="tangled-cover">
+      <div id="divtext">
+        <p><b>Tangled</b> is a 2010 American 3D computer-animated film produced by Walt Disney Animation Studios.
+          Loosely based on the German fairy tale Rapunzel in the collection of folk tales published by the Brothers
+          Grimm, it is the 50th Disney animated feature film. <br> Directed by Nathan Greno and Byron Howard, produced
+          by Roy Conli, with a screenplay written by Dan Fogelman, staring the voices of Mandy Moore, Zachary Levi and
+          Donna Murphy.</p>
+
+      </div>
+      <div id="divform">
+        <form class="form-horizontal">
+          <fieldset>
+
             <!-- Form Name -->
             <legend>Quieres ser mi novia</legend>
-            
+
             <!-- Select Basic -->
             <div class="form-group">
               <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
@@ -35,32 +48,37 @@
                 </select>
               </div>
             </div>
-            
-            </fieldset>
-            </form>
-            
-        </div>
-    </container>    
-    <section class="sing" id="sing">
-        <h2 class="title">
-          <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
-          Sing Along
-          <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
-        </h2>
-          <div class="col mb-5">
-            <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/I-see-the-light.mp4">
-            <img src="/media/images/cover/i-see-the-light.gif" alt="I See the Light">
-            </a>
-            <p>I See the Light</p>
-          </div>
 
-        </div>
-        
-    </section>
+          </fieldset>
+        </form>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script src="/components/scripts/script.js"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    </div>
+  </container>
+  <section class="sing" id="sing">
+    <h2 class="title">
+      <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+      Sing Along
+      <img src="/media/images/icons/flower-icon.png" alt="flower-icon" class="flower-icon">
+    </h2>
+    <div class="col mb-5">
+      <a class="" data-fancybox="gallery" video loop muted controls href="/media/video/I-see-the-light.mp4">
+        <img src="/media/images/cover/i-see-the-light.gif" alt="I See the Light">
+      </a>
+      <p>I See the Light</p>
+    </div>
+
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <script src="/components/scripts/script.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
