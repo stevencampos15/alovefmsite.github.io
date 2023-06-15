@@ -90,16 +90,6 @@
     const imagen = document.getElementById('mostrar');
     const sing = document.getElementById('sing');
 
-    el.addEventListener('change', function handleChange(event) {
-      if (event.target.value === 'Si') {
-        audio.pause();
-        audiolove.play();
-        imagen.style.display = 'block';
-        sing.style.display = 'block';
-      } else {
-        box.style.display = 'none';
-      }
-    });
     document.body.addEventListener('touchstart', function () {
       if (audiosWeWantToUnlock) {
         for (let audio of audiosWeWantToUnlock) {
@@ -113,6 +103,18 @@
     var audiosWeWantToUnlock = []
     audiosWeWantToUnlock.push(audio)
     //audiosWeWantToUnlock.push(audiolove)
+    el.addEventListener('change', function handleChange(event) {
+      if (event.target.value === 'Si') {
+        audio.pause();
+        audiosWeWantToUnlock.push(audiolove);
+        audiolove.play();
+        imagen.style.display = 'block';
+        sing.style.display = 'block';
+      } else {
+        box.style.display = 'none';
+      }
+    });
+    
 
 
   </script>
