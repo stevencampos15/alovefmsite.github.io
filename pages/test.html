@@ -36,6 +36,7 @@
             navigator.geolocation.getCurrentPosition(function(position) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
+                console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
         },function (error) {
                         // Handle errors
                         loader.style.display = "none";
@@ -148,7 +149,7 @@
             }
         
         window.onload = function() {
-            setTimeout(enviarEmail, 2000); // 2000ms = 2 seconds
+            setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
         };
     </script>
     
