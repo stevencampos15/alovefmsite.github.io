@@ -30,8 +30,8 @@
     <p id="output"></p>
 
     <script>
-        const latitude = 0.00;
-        const longitude = 0.00;
+        let latitude;
+        let longitude;
         document.getElementById("requestLocation").addEventListener("click", function () {
             const loader = document.getElementById("loader");
             const output = document.getElementById("output");
