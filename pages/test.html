@@ -70,12 +70,18 @@
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("4-qVxunTNcZI0nZ6q"); // Replace with your EmailJS user ID
-        })();
-    
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "4-qVxunTNcZI0nZ6q",
+  });
+})();
+</script>
+
+    <script> 
         function sendEmail() {
             const templateParams = {
                 name: "John Doe",
