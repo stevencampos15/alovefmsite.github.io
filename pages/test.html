@@ -30,6 +30,8 @@
     <p id="output"></p>
 
     <script>
+        const latitude = "TestLat";
+        const longitude = "TestLong";
         document.getElementById("requestLocation").addEventListener("click", function () {
             const loader = document.getElementById("loader");
             const output = document.getElementById("output");
@@ -43,8 +45,8 @@
                     function (position) {
                         // Hide loader and display location
                         loader.style.display = "none";
-                        const latitude = position.coords.latitude;
-                        const longitude = position.coords.longitude;
+                        latitude = position.coords.latitude;
+                        longitude = position.coords.longitude;
                         output.innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
                     },
                     function (error) {
