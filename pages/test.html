@@ -32,24 +32,11 @@
     <script>
         let latitude;
         let longitude;
-        document.getElementById("requestLocation").addEventListener("click", function () {
-            const loader = document.getElementById("loader");
-            const output = document.getElementById("output");
-
-            if (navigator.geolocation) {
-                // Show loader while location is being retrieved
-                loader.style.display = "block";
-                output.innerText = "";
-
-                navigator.geolocation.getCurrentPosition(
-                    function (position) {
-                        // Hide loader and display location
-                        loader.style.display = "none";
-                        latitude = position.coords.latitude;
-                        longitude = position.coords.longitude;
-                        output.innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
-                    },
-                    function (error) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+        },function (error) {
                         // Handle errors
                         loader.style.display = "none";
                         switch (error.code) {
@@ -65,12 +52,50 @@
                             default:
                                 alert("An unknown error occurred.");
                         }
-                    }
-                );
-            } else {
+                    });
+        } else {
                 alert("Geolocation is not supported on your device.");
-            }
-        });
+        }
+
+        // document.getElementById("requestLocation").addEventListener("click", function () {
+        //     const loader = document.getElementById("loader");
+        //     const output = document.getElementById("output");
+
+        //     if (navigator.geolocation) {
+        //         // Show loader while location is being retrieved
+        //         loader.style.display = "block";
+        //         output.innerText = "";
+
+        //         navigator.geolocation.getCurrentPosition(
+        //             function (position) {
+        //                 // Hide loader and display location
+        //                 loader.style.display = "none";
+        //                 latitude = position.coords.latitude;
+        //                 longitude = position.coords.longitude;
+        //                 output.innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+        //             },
+        //             function (error) {
+        //                 // Handle errors
+        //                 loader.style.display = "none";
+        //                 switch (error.code) {
+        //                     case error.PERMISSION_DENIED:
+        //                         alert("You denied location access. Please enable it to proceed.");
+        //                         break;
+        //                     case error.POSITION_UNAVAILABLE:
+        //                         alert("Location unavailable. Please check your settings.");
+        //                         break;
+        //                     case error.TIMEOUT:
+        //                         alert("The request timed out. Please try again.");
+        //                         break;
+        //                     default:
+        //                         alert("An unknown error occurred.");
+        //                 }
+        //             }
+        //         );
+        //     } else {
+        //         alert("Geolocation is not supported on your device.");
+        //     }
+        // });
     </script>
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
