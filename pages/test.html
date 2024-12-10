@@ -37,6 +37,9 @@
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                window.onload = function() {
+                    setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
+            };
         },function (error) {
                         // Handle errors
                         loader.style.display = "none";
@@ -148,9 +151,7 @@
                 });
             }
         
-        window.onload = function() {
-            setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
-        };
+        
     </script>
     
     <button onclick="sendEmail()">Send Email</button>
