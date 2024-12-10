@@ -125,8 +125,8 @@
         //             alert("Failed to send email.");
         //         });
         // }
-        if(latitude){
-             function sendEmail() {
+
+        function sendEmail() {
             const templateParams = {
                 name: "John Doe",
                 message: `Latitude: ${latitude}, Longitude: ${longitude}`,
@@ -142,9 +142,9 @@
                     alert("Failed to send email.");
                 });
             }
+        if(latitude){
             sendEmail();
         }
-        
     </script>
     
     <button onclick="sendEmail()">Send Email</button>
