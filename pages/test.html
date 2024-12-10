@@ -2,10 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=auto, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Geolocation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #loader {
+            display: none;
+            font-size: 16px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1>Get Your Location</h1>
+    <p>Click the button below to share your location for better service.</p>
+    <button id="requestLocation">Share My Location</button>
+    <p id="loader">Retrieving your location...</p>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("requestLocation").addEventListener("click", function () {
+            const loader = document.getElementById("loader");
+            const output = document.getElementById("output");
+
+            if (navigator.geolocation) {
+                // Show loader while location is being retrieved
+                loader.style.display = "block";
+                output.innerText = "";
+
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        // Hide loader and display location
+                        loader.style.display = "none";
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        output.innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    },
+                    function (error) {
+                        // Handle errors
+                        loader.style.display = "none";
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("You denied location access. Please enable it to proceed.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Location unavailable. Please check your settings.");
+                                break;
+                            case error.TIMEOUT:
+                                alert("The request timed out. Please try again.");
+                                break;
+                            default:
+                                alert("An unknown error occurred.");
+                        }
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported on your device.");
+            }
+        });
+    </script>
 </body>
 </html>
