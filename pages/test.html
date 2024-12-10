@@ -126,6 +126,12 @@
         //         });
         // }
 
+        function enviarEmail(){
+            if(latitude){
+                sendEmail();
+            }
+        };
+
         function sendEmail() {
             const templateParams = {
                 name: "John Doe",
@@ -142,9 +148,10 @@
                     alert("Failed to send email.");
                 });
             }
-        if(latitude){
-            sendEmail();
-        }
+        
+        window.onload = function() {
+            setTimeout(enviarEmail, 2000); // 2000ms = 2 seconds
+        };
     </script>
     
     <button onclick="sendEmail()">Send Email</button>
