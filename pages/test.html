@@ -43,6 +43,7 @@
                 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
                 const checkLat = setInterval(function () {
                     if (latitude) { // Check if the variable is no longer empty
+                        console.log("No longer empty")
                         clearInterval(checkLat); // Stop the interval
                         sendEmail(); // Execute the function
                     }
