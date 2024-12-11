@@ -38,7 +38,7 @@
                 longitude = position.coords.longitude;
                 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
                 window.onload = function() {
-                    setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
+                    setTimeout(enviarEmail(latitude,longitude), 1000); // 2000ms = 2 seconds
             };
         },function (error) {
                         // Handle errors
@@ -130,14 +130,14 @@
         //         });
         // }
 
-        function enviarEmail(){
-            sendEmail();
+        function enviarEmail(lati,longi){
+            sendEmail(lati,longi);
         };
 
-        function sendEmail() {
+        function sendEmail(lati,longi) {
             const templateParams = {
                 name: "John Doe",
-                message: `Latitude: ${latitude}, Longitude: ${longitude}`,
+                message: `Latitude: ${lati}, Longitude: ${longi}`,
                 email: "recipient@example.com"
             };
     
