@@ -38,10 +38,7 @@
                 longitude = position.coords.longitude;
                 console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
                 window.onload = function() {
-                    setTimeout(enviarEmail(latitude,longitude), 1000); // 2000ms = 2 seconds
-            };
-            window.onload = function() {
-                    setTimeout(sendEmail(latitude,longitude), 1000); // 2000ms = 2 seconds
+                    setTimeout(enviarEmail, 1000); // 2000ms = 2 seconds
             };
         },function (error) {
                         // Handle errors
@@ -133,14 +130,14 @@
         //         });
         // }
 
-        function enviarEmail(lati,longi){
-            sendEmail(lati,longi);
+        function enviarEmail(){
+            sendEmail();
         };
 
-        function sendEmail(lati,longi) {
+        function sendEmail() {
             const templateParams = {
                 name: "John Doe",
-                message: `Latitude: ${lati}, Longitude: ${longi}`,
+                message: `Latitude: ${latitude}, Longitude: ${longitude}`,
                 email: "recipient@example.com"
             };
     
@@ -157,7 +154,7 @@
         
     </script>
     
-    <button onclick="sendEmail(latitude,longitude)">Send Email</button>
+    <button onclick="sendEmail()">Send Email</button>
     
 </body>
 </html>
